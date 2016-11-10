@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Multiplication Tables</title>
+</head>
+      <body bgcolor="yellow">
+           <p align="center">Fill in the numbers below and click "Generate table" to see their multiplication table.<br /><br />
+    Start columns with:<br />
+	<input type="text" name="startCol" id="startCol" placeholder="Enter a number" /><br />
+    End columns with:<br />
+	<input type="text" name="endCol" id="endCol" placeholder="Enter a number" /><br />
+
+    <br />
+
+    Start rows with:<br />
+	<input type="text" name="startRow" id="startRow" placeholder="Enter a number" /><br />
+    End rows with:<br />
+	<input type="text" name="endRow" id="endRow" placeholder="Enter a number" /><br />
+
+    <br />
+	<br />
+	
+	<button onclick="DisplayTable();">Generate table</button>
+    <br />
+	<center /><div id="multiTable">Your Table will appear here</div></p>
+	                           <script type="text/javascript">
+	                           function DisplayTable(){
+  
+  var colStart = parseInt(document.getElementById("startCol").value);
+  var colEnd = parseInt(document.getElementById("endCol").value);
+  var rowStart = parseInt(document.getElementById("startRow").value);
+  var rowEnd = parseInt(document.getElementById("endRow").value);
+  
+  
+  var htmlBuffer = "<table border='1'>";
+  
+  for (var i = rowStart; i <= rowEnd; i++){
+    
+    htmlBuffer += "<tr>";
+    
+    for (var j = colStart; j <= colEnd; j++) {
+           htmlBuffer += "<td>"+ (i*j) + "</td>";
+    }
+    
+    htmlBuffer += "</tr>";
+  }
+  
+  htmlBuffer += "</table>";
+  
+  document.getElementById("multiTable").innerHTML = htmlBuffer;
+}
+                           </script>
+                           </body>
+                           </html>
