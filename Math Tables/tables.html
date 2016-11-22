@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Multiplication Tables</title>
+</head>
+      <body bgcolor="#00FFFF">
+           <p align="center">Fill in the number below and click "Generate table" to see its multiplication table.<br /><br />
+    Enter a number<br />
+	<input type="text" name="input" id="input" placeholder="Enter a number" /><br />
+	<br />
+	
+	<button onclick="DisplayTable();">Generate table</button>
+    <br />
+	<center /><div id="multiTable">Your Table will appear here</div></p>
+	                           <script type="text/javascript">
+	                           function DisplayTable(){
+  
+  var colStart = parseInt(document.getElementById("input").value);
+  
+  
+  var htmlBuffer = "<table border='1'>";
+  
+  for(var i=1;i<=10;i++)
+     {
+    
+    htmlBuffer += "<tr>";
+     
+       {
+           htmlBuffer += "<td>"+colStart+"*"+ i + " = " +"       "+ (i*colStart) + "</td>";
+    }
+    
+    htmlBuffer += "</tr>";
+  }
+  
+  htmlBuffer += "</table>";
+  
+  document.getElementById("multiTable").innerHTML = htmlBuffer;
+}
+                           </script>
+                           </body>
+                           </html>
